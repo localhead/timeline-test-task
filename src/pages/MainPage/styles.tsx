@@ -1,3 +1,4 @@
+import { media } from "@features/adaptive/breakpoints";
 import { colors } from "@utils/colors";
 import { zIndexes } from "@utils/zIndexes";
 import styled from "styled-components";
@@ -8,6 +9,10 @@ export const StyledMainPage = styled.div`
   padding-left: 322px;
   padding-right: 160px;
   height: 100vh;
+
+  ${media.down("desktopSmall")} {
+    padding: 0px 50px;
+  }
 `;
 
 export const StyledMainContent = styled.div`
@@ -16,6 +21,11 @@ export const StyledMainContent = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
+
+  ${media.down("desktopSmall")} {
+    border-left: none;
+    border-right: none;
+  }
 `;
 
 export const StyledTempDiv = styled.div`
@@ -45,6 +55,14 @@ export const StyledMainTitle = styled(MainTitle)`
       rgba(195, 99, 185, 1) 76%,
       rgba(239, 93, 168, 1) 100%
     );
+  }
+
+  ${media.down("desktopSmall")} {
+    left: 0px;
+    &::before {
+      content: "";
+      display: none;
+    }
   }
 `;
 
@@ -85,4 +103,9 @@ export const StyledSliderSection = styled(SliderSection)`
   width: calc(100% - ${innerContentPadding}px);
   bottom: 0;
   left: ${innerContentPadding}px;
+
+  ${media.down("desktopSmall")} {
+    left: 0px;
+    width: 100%;
+  }
 `;

@@ -29,18 +29,18 @@ const _MainPage: FC<MainPageProps> = (props) => {
   const selectedDataItem = mockData.find((item) => item.id === activeIndex);
   const selectedDataItemContent = selectedDataItem && selectedDataItem.content;
 
-  const windowTitle = useWindowWidth();
+  const widthType = useWindowWidth();
 
   const { windowWidth } = useGetWindowWidth();
 
-  console.log(window, windowWidth);
+  const isMobile = widthType === "mobile";
 
   return (
     <Container>
       <StyledMainPage {...restProps}>
         <StyledMainContent>
           <StyledTempDiv>
-            {windowWidth} {windowTitle}
+            {windowWidth} {widthType}
           </StyledTempDiv>
 
           <StyledMainTitle>
@@ -52,8 +52,13 @@ const _MainPage: FC<MainPageProps> = (props) => {
             onChange={setActiveIndex}
             activeIndex={activeIndex}
           />
-          <StyledBackgroundInnerBorderHorizontal />
-          <StyledBackgroundInnerBorderVertical />
+          {!isMobile && (
+            <>
+              <StyledBackgroundInnerBorderHorizontal />
+              <StyledBackgroundInnerBorderVertical />
+            </>
+          )}
+
           <StyledSliderSection data={selectedDataItemContent} />
         </StyledMainContent>
       </StyledMainPage>
