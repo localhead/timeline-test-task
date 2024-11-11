@@ -1,3 +1,4 @@
+import { media } from "@features/adaptive/breakpoints";
 import { Typography } from "@packages/uiKit/Typography";
 import { colors } from "@utils/colors";
 import { zIndexes } from "@utils/zIndexes";
@@ -14,10 +15,14 @@ export const StyledRotatingTimelineSection = styled.div`
   position: relative;
 `;
 
+const radiusFullHD = 530;
+const radiusMedium = 430;
+const radiusSmall = 340;
+
 export const StyledCircleWrapper = styled.div`
   position: relative;
-  width: 530px;
-  height: 530px;
+  width: ${radiusFullHD}px;
+  height: ${radiusFullHD}px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -26,14 +31,33 @@ export const StyledCircleWrapper = styled.div`
 
   border: 1px solid ${colors.gray0};
   z-index: ${zIndexes.above3};
+
+  ${media.down("desktopFullHD")} {
+    // desktopMedium
+    width: ${radiusMedium}px;
+    height: ${radiusMedium}px;
+  }
+  ${media.down("desktopMedium")} {
+    // desktopSmall
+    width: ${radiusSmall}px;
+    height: ${radiusSmall}px;
+  }
 `;
+
+const pointRadiusFullHD = 56;
+const pointRadiusMedium = 42;
+const pointRadiusSmall = 32;
+
+const fzRadiusFullHD = 20;
+const fzRadiusMedium = 16;
+const fzRadiusSmall = 14;
 
 export const StyledPoint = styled.div<{ $isActive: boolean }>`
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: ${fzRadiusFullHD}px;
   cursor: pointer;
   transform: translate(-50%, -50%);
   border-radius: 50%;
@@ -46,23 +70,57 @@ export const StyledPoint = styled.div<{ $isActive: boolean }>`
           border: 1px solid ${colors.gray1};
           background-color: ${colors.white};
           color: ${colors.dark0};
-          width: 56px;
-          height: 56px;
+          width: ${pointRadiusFullHD}px;
+          height: ${pointRadiusFullHD}px;
+          ${media.down("desktopFullHD")} {
+            // desktopMedium
+            font-size: ${fzRadiusMedium}px;
+            width: ${pointRadiusMedium}px;
+            height: ${pointRadiusMedium}px;
+          }
+          ${media.down("desktopMedium")} {
+            // desktopSmall
+            font-size: ${fzRadiusSmall}px;
+            width: ${pointRadiusSmall}px;
+            height: ${pointRadiusSmall}px;
+          }
         `
       : css`
           background-color: ${colors.dark0};
           border: transparent;
           color: transparent;
+
           width: 6px;
           height: 6px;
+
+          ${media.down("desktopFullHD")} {
+            // desktopMedium
+            font-size: ${fzRadiusMedium}px;
+          }
+          ${media.down("desktopMedium")} {
+            // desktopSmall
+            font-size: ${fzRadiusSmall}px;
+          }
         `}
 
   &:hover {
     background-color: ${colors.white};
     border: 1px solid ${colors.gray1};
     color: ${colors.dark0};
-    width: 56px;
-    height: 56px;
+    width: ${pointRadiusFullHD}px;
+    height: ${pointRadiusFullHD}px;
+    ${media.down("desktopFullHD")} {
+      // desktopMedium
+      font-size: 18px;
+      width: ${pointRadiusMedium}px;
+      height: ${pointRadiusMedium}px;
+    }
+    ${media.down("desktopMedium")} {
+      // desktopSmall
+      font-size: 14px;
+      width: ${pointRadiusSmall}px;
+      height: ${pointRadiusSmall}px;
+    }
   }
 `;
 
@@ -93,6 +151,15 @@ export const StyledTitleText = styled(Typography).attrs({
   top: 0%;
   left: calc(100% + 36px);
 
+  ${media.down("desktopFullHD")} {
+    // desktopMedium
+    font-size: 20px;
+  }
+  ${media.down("desktopMedium")} {
+    // desktopSmall
+    font-size: 16px;
+  }
+
   ${({ $isActive }) =>
     $isActive
       ? css`
@@ -118,4 +185,5 @@ export const StyledAdditionalControlsButtons = styled(
   left: 70px;
   top: calc(72%);
   transform: translate(0%, -75%);
+  z-index: ${zIndexes.above4};
 `;

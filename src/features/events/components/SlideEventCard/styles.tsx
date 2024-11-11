@@ -1,3 +1,4 @@
+import { media } from "@features/adaptive/breakpoints";
 import { Typography } from "@packages/uiKit/Typography";
 import styled from "styled-components";
 
@@ -5,16 +6,12 @@ export const StyledSlideEventCard = styled.div`
   height: 100%;
   width: 100%;
 
-  min-height: 250px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  //padding-bottom: 40px;
-
+  padding-bottom: 40px;
   gap: 10px;
-
   max-width: 80%;
 `;
 
@@ -31,6 +28,10 @@ export const StyledTitle = styled(Typography).attrs({
   nowrap: true,
 })`
   font-family: Bebas Neue, Sans-Serif;
+
+  ${media.down("desktopMedium")} {
+    font-size: 20px;
+  }
 `;
 
 export const StyledDescription = styled(Typography).attrs({
@@ -42,4 +43,9 @@ export const StyledDescription = styled(Typography).attrs({
   lineHeightMultiplier: 1.5,
 })`
   line-height: 30px;
+
+  ${media.down("desktopMedium")} {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;

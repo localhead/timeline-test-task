@@ -7,13 +7,16 @@ export const StyledMainTitle = styled(Typography).attrs({
   size: 56,
   color: "dark0",
 })`
+  ${media.down("desktopFullHD")} {
+    // desktopMedium
+    font-size: 48px;
+  }
+  ${media.down("desktopMedium")} {
+    // desktopSmall
+    font-size: 42px;
+  }
   ${media.down("desktopSmall")} {
-    font-size: 40px;
-  }
-  ${media.down("laptop")} {
-    font-size: 35px;
-  }
-  ${media.down("tablet")} {
+    //mobile
     font-size: 20px;
   }
 `;

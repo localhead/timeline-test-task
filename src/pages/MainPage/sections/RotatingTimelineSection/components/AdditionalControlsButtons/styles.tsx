@@ -1,16 +1,26 @@
+import { media } from "@features/adaptive/breakpoints";
 import { CaretIcon } from "@packages/icons";
 import { colors } from "@utils/colors";
-import { zIndexes } from "@utils/zIndexes";
 import styled, { css } from "styled-components";
 
 export const StyledAdditionalControlsButtons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 `;
 
 export const StyledIndexStatusContainer = styled.div`
   font-size: 20px;
+
+  ${media.down("desktopFullHD")} {
+    // medium
+    font-size: 18px;
+  }
+
+  ${media.down("desktopMedium")} {
+    // small
+    font-size: 14px;
+  }
 `;
 
 export const StyledCaretButtonContainer = styled.div`
@@ -22,15 +32,28 @@ export const StyledCaretButton = styled.div<{ $isDisabled: boolean }>`
   color: ${colors.dark0};
   border: 1px solid ${colors.gray1};
   border-radius: 50%;
-  padding: 12px;
+
   display: flex;
+  padding: 12px;
+  font-size: 25px;
   cursor: pointer;
-  z-index: ${zIndexes.above3};
 
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  ${media.down("desktopFullHD")} {
+    // medium
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  ${media.down("desktopMedium")} {
+    // small
+    padding: 10px;
+    font-size: 12px;
   }
 
   ${({ $isDisabled }) =>

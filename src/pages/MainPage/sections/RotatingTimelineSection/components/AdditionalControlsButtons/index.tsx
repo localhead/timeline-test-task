@@ -30,7 +30,6 @@ const _AdditionalControlsButtons: FC<AdditionalControlsButtonsProps> = (
     ...restProps
   } = props;
 
-  const caretSize = 25;
   const caretStroke = 2;
 
   const isPreviousButtonDisabled = activeIndex === 0;
@@ -58,16 +57,13 @@ const _AdditionalControlsButtons: FC<AdditionalControlsButtonsProps> = (
           $isDisabled={isPreviousButtonDisabled}
           onClick={onPreviousClickHandler}
         >
-          <StyledCaretPreviousButton
-            size={caretSize}
-            strokeWidth={caretStroke}
-          />
+          <StyledCaretPreviousButton strokeWidth={caretStroke} />
         </StyledCaretButton>
         <StyledCaretButton
           $isDisabled={isNextButtonDisabled}
           onClick={onNextClickHandler}
         >
-          <StyledCaretNextButton size={caretSize} strokeWidth={caretStroke} />
+          <StyledCaretNextButton strokeWidth={caretStroke} />
         </StyledCaretButton>
       </StyledCaretButtonContainer>
     </StyledAdditionalControlsButtons>

@@ -19,13 +19,16 @@ export const StyledTitle = styled(Typography).attrs({
   letter-spacing: -3px;
   user-select: none;
 
+  ${media.down("desktopFullHD")} {
+    // desktopMedium
+    font-size: 180px;
+  }
+  ${media.down("desktopMedium")} {
+    // desktopSmall
+    font-size: 115px;
+  }
   ${media.down("desktopSmall")} {
-    font-size: 150px;
-  }
-  ${media.down("laptop")} {
-    font-size: 110px;
-  }
-  ${media.down("tablet")} {
+    // mobile
     font-size: 56px;
   }
 `;

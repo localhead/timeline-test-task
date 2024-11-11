@@ -18,12 +18,6 @@ const getWindowWidth = (windowWidthPx: number): WindowResolutions => {
       return "desktopMedium";
     case windowWidthPx >= Breakpoints.desktopSmall:
       return "desktopSmall";
-    case windowWidthPx >= Breakpoints.laptop:
-      return "laptop";
-    case windowWidthPx >= Breakpoints.tablet:
-      return "tablet";
-    case windowWidthPx <= Breakpoints.mobile:
-      return "mobile";
     default:
       return "mobile";
   }
