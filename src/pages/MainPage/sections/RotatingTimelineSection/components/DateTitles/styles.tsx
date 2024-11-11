@@ -1,3 +1,4 @@
+import { media } from "@features/adaptive/breakpoints";
 import { Typography } from "@packages/uiKit/Typography";
 import { colors } from "@utils/colors";
 import { zIndexes } from "@utils/zIndexes";
@@ -17,6 +18,16 @@ export const StyledTitle = styled(Typography).attrs({
   color: ${({ $color }) => getColor($color)};
   letter-spacing: -3px;
   user-select: none;
+
+  ${media.down("desktopSmall")} {
+    font-size: 150px;
+  }
+  ${media.down("laptop")} {
+    font-size: 110px;
+  }
+  ${media.down("tablet")} {
+    font-size: 56px;
+  }
 `;
 
 const getColor = ($color: "blue" | "pink") => {

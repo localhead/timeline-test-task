@@ -1,3 +1,4 @@
+import { AdaptiveContext } from "@features/adaptive/components/AdaptiveContext";
 import { MainPage } from "@pages/MainPage";
 import { GlobalStyle } from "@utils/globalStyle";
 import React from "react";
@@ -5,8 +6,10 @@ import React from "react";
 export const App: React.FC = () => {
   return (
     <div className="App">
-      <GlobalStyle />
-      <MainPage />
+      <AdaptiveContext>
+        <GlobalStyle />
+        <MainPage />
+      </AdaptiveContext>
     </div>
   );
 };

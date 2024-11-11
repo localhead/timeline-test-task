@@ -3,6 +3,7 @@ import React, { FC, memo, useState } from "react";
 import { Container } from "@components/Container";
 import { mockData } from "../../features/events/constants";
 
+import { useWindowWidth } from "@features/adaptive/useWindowWidth";
 import { RotatingTimelineSection } from "./sections/RotatingTimelineSection";
 import {
   StyledBackgroundInnerBorderHorizontal,
@@ -25,6 +26,10 @@ const _MainPage: FC<MainPageProps> = (props) => {
 
   const selectedDataItem = mockData.find((item) => item.id === activeIndex);
   const selectedDataItemContent = selectedDataItem && selectedDataItem.content;
+
+  const window = useWindowWidth();
+
+  console.log(window);
 
   return (
     <Container>
