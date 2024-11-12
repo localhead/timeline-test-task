@@ -8,6 +8,13 @@ export const StyledDateTitles = styled.div`
   display: flex;
   gap: 80px;
   z-index: ${zIndexes.above2};
+
+  ${media.down("desktopSmall")} {
+    gap: 20px;
+  }
+  ${media.down("tablet")} {
+    gap: 25px;
+  }
 `;
 
 export const StyledTitle = styled(Typography).attrs({
@@ -28,6 +35,10 @@ export const StyledTitle = styled(Typography).attrs({
     font-size: 115px;
   }
   ${media.down("desktopSmall")} {
+    // mobile
+    font-size: 92px;
+  }
+  ${media.down("tablet")} {
     // mobile
     font-size: 56px;
   }

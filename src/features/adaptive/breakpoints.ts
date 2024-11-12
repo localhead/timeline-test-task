@@ -2,10 +2,12 @@ export type WindowResolutions =
   | "desktopFullHD"
   | "desktopMedium"
   | "desktopSmall"
+  | "tablet"
   | "mobile";
 
 export enum Breakpoints {
   mobile = 0,
+  tablet = 600,
   desktopSmall = 1250,
   desktopMedium = 1540,
   desktopFullHD = 1919,

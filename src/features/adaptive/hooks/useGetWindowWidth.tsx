@@ -10,7 +10,6 @@ export const useGetWindowWidth = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Initial set of the window width in case it changes after component mounts
     handleResize();
 
     return () => {

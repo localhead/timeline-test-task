@@ -113,11 +113,14 @@ export const StyledTitleText = styled(Typography).attrs({
 
   ${media.down("desktopFullHD")} {
     // desktopMedium
-    font-size: 20px;
+    font-size: 18px;
+    transform: translateY(-10%);
+    left: calc(100% + 26px);
   }
   ${media.down("desktopMedium")} {
     // desktopSmall
-    font-size: 16px;
+    font-size: 14px;
+    left: calc(100% + 20px);
   }
 
   ${({ $isActive }) =>

@@ -7,6 +7,11 @@ export const StyledAdditionalControlsButtons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  ${media.down("desktopSmall")} {
+    // small
+    gap: 10px;
+  }
 `;
 
 export const StyledIndexStatusContainer = styled.div`
@@ -26,6 +31,10 @@ export const StyledIndexStatusContainer = styled.div`
 export const StyledCaretButtonContainer = styled.div`
   display: flex;
   gap: 10px;
+  ${media.down("desktopSmall")} {
+    // mob and tab
+    gap: 5px;
+  }
 `;
 
 export const StyledCaretButton = styled.div<{ $isDisabled: boolean }>`
@@ -54,6 +63,11 @@ export const StyledCaretButton = styled.div<{ $isDisabled: boolean }>`
     // small
     padding: 10px;
     font-size: 12px;
+  }
+  ${media.down("desktopSmall")} {
+    // small
+    padding: 8px;
+    font-size: 8px;
   }
 
   ${({ $isDisabled }) =>

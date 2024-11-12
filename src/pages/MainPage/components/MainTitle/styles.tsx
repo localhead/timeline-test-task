@@ -19,4 +19,8 @@ export const StyledMainTitle = styled(Typography).attrs({
     //mobile
     font-size: 20px;
   }
+  ${media.down("tablet")} {
+    //mobile
+    font-size: 20px;
+  }
 `;

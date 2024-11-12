@@ -14,6 +14,7 @@ export const useGetPositionsItems = (
 
     return (
       <PositionPoint
+        key={index}
         activeIndex={activeIndex}
         handleClick={handleClick}
         pos={pos}

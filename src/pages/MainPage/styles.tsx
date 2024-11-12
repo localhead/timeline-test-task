@@ -11,7 +11,7 @@ export const StyledMainPage = styled.div`
   height: 100vh;
 
   ${media.down("desktopSmall")} {
-    padding: 0px 50px;
+    padding: 0px 20px;
   }
 `;
 
@@ -101,11 +101,23 @@ export const StyledBackgroundInnerBorderVertical = styled(
 export const StyledSliderSection = styled(SliderSection)`
   position: absolute;
   width: calc(100% - ${innerContentPadding}px);
-  bottom: 0;
+  bottom: 0%;
   left: ${innerContentPadding}px;
 
   ${media.down("desktopSmall")} {
     left: 0px;
     width: 100%;
+    bottom: 0%;
+    border-top: 1px solid ${colors.gray3};
+    padding-top: 28px;
+
+    padding-bottom: 100px;
+  }
+
+  ${media.down("tablet")} {
+    // mobile
+
+    width: 100%;
+    bottom: 0%;
   }
 `;

@@ -13,6 +13,11 @@ export const StyledSlideEventCard = styled.div`
   padding-bottom: 40px;
   gap: 10px;
   max-width: 80%;
+
+  ${media.down("desktopMedium")} {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
 `;
 
 export const StyledTextContainer = styled.div`
@@ -44,8 +49,12 @@ export const StyledDescription = styled(Typography).attrs({
 })`
   line-height: 30px;
 
-  ${media.down("desktopMedium")} {
-    font-size: 16px;
-    line-height: 24px;
+  ${media.down("desktopSmall")} {
+    font-size: 14px;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    height: 80px;
   }
 `;

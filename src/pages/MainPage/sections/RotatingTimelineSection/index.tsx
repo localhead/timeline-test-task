@@ -75,10 +75,11 @@ const _RotatingTimelineSection: FC<RotatingTimelineSectionProps> = (props) => {
 
   const widthType = useWindowWidth();
   const isMobile = widthType === "mobile";
+  const isTablet = widthType === "tablet";
 
   return (
     <StyledRotatingTimelineSection {...restProps}>
-      {!isMobile && (
+      {!isMobile && !isTablet && (
         <StyledCircleWrapper ref={circleRef}>{items}</StyledCircleWrapper>
       )}
       <StyledAdditionalControlsButtons

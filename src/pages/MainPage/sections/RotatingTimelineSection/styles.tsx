@@ -44,6 +44,11 @@ export const StyledCircleWrapper = styled.div`
 
 export const StyledDateTitles = styled(DateTitles)`
   position: absolute;
+
+  ${media.down("desktopSmall")} {
+    // for tablets and mobiles
+    top: 25%;
+  }
 `;
 
 export const StyledAdditionalControlsButtons = styled(
@@ -54,4 +59,17 @@ export const StyledAdditionalControlsButtons = styled(
   top: calc(72%);
   transform: translate(0%, -75%);
   z-index: ${zIndexes.above4};
+
+  ${media.down("desktopSmall")} {
+    // tablet
+    left: 0px;
+    top: 95%;
+  }
+
+  ${media.down("tablet")} {
+    // for mobiles
+    // desktopMedium
+    left: 0px;
+    top: 95%;
+  }
 `;

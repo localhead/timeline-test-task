@@ -32,12 +32,17 @@ export const GlobalStyle = createGlobalStyle`
         font-display: block;
   }
 
+
+
   body {
     margin: 0;
     padding: 0;
     font-family: PT Sans, Sans-Serif;
     color: ${colors.dark0};
+  }
 
+  body::-webkit-scrollbar {
+     display: none; /* Hide scrollbar in Chrome, Safari, Opera */
   }
 
   //Normalize

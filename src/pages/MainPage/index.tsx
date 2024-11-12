@@ -34,7 +34,7 @@ const _MainPage: FC<MainPageProps> = (props) => {
   const { windowWidth } = useGetWindowWidth();
 
   const isMobile = widthType === "mobile";
-
+  const isTablet = widthType === "tablet";
   return (
     <Container>
       <StyledMainPage {...restProps}>
@@ -52,7 +52,7 @@ const _MainPage: FC<MainPageProps> = (props) => {
             onChange={setActiveIndex}
             activeIndex={activeIndex}
           />
-          {!isMobile && (
+          {!isMobile && !isTablet && (
             <>
               <StyledBackgroundInnerBorderHorizontal />
               <StyledBackgroundInnerBorderVertical />
