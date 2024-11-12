@@ -21,7 +21,7 @@ export const StyledCaretIcon = styled(CaretIcon)`
   border-radius: 50%;
   padding: 12px;
   cursor: pointer;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px 0px rgba(40, 32, 255, 0.15);
   position: absolute;
   top: 50%;
   right: calc(0% + 30px);
@@ -32,6 +32,6 @@ export const StyledCaretIcon = styled(CaretIcon)`
   transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 30px 0px rgba(40, 32, 255, 0.2);
   }
 `;
