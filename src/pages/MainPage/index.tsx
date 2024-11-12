@@ -3,7 +3,6 @@ import React, { FC, memo, useState } from "react";
 import { Container } from "@components/Container";
 import { mockData } from "../../features/events/constants";
 
-import { useGetWindowWidth } from "@features/adaptive/hooks/useGetWindowWidth";
 import { useWindowWidth } from "@features/adaptive/useWindowWidth";
 import { RotatingTimelineSection } from "./sections/RotatingTimelineSection";
 import {
@@ -13,7 +12,6 @@ import {
   StyledMainPage,
   StyledMainTitle,
   StyledSliderSection,
-  StyledTempDiv,
 } from "./styles";
 
 export interface MainPageProps {
@@ -31,18 +29,12 @@ const _MainPage: FC<MainPageProps> = (props) => {
 
   const widthType = useWindowWidth();
 
-  const { windowWidth } = useGetWindowWidth();
-
   const isMobile = widthType === "mobile";
   const isTablet = widthType === "tablet";
   return (
     <Container>
       <StyledMainPage {...restProps}>
         <StyledMainContent>
-          <StyledTempDiv>
-            {windowWidth} {widthType}
-          </StyledTempDiv>
-
           <StyledMainTitle>
             Исторические <br />
             даты

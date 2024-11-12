@@ -28,10 +28,6 @@ export const StyledMainContent = styled.div`
   }
 `;
 
-export const StyledTempDiv = styled.div`
-  position: absolute;
-`;
-
 const innerContentPadding = 70;
 
 export const StyledMainTitle = styled(MainTitle)`
